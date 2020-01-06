@@ -2,6 +2,8 @@
 
 # Ansible Galaxy Role: Apache 2.x
 
+[[_TOC_]]
+
 An Ansible Role that installs Apache 2.x on RHEL/CentOS, Debian/Ubuntu, SLES and Solaris.
 
 ----
