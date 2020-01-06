@@ -62,6 +62,8 @@ This is a breaking change, a bug, or something very important to note.
 
 curl --header "PRIVATE-TOKEN: zPL1wTepjFKk_aGxW4jc" https://gitlab.cherubits.hu/api/v4/groups/oss
 
+### <i class="fab fa-gitlab fa-fw" style="color:rgb(107,79,187); font-size:.85em" aria-hidden="true"></i> Purple GitLab Tanuki
+{: #tanuki-purple}
 
 NOTE: **Note:** 
 If you are using Apache with PHP, I recommend using the `geerlingguy.php` role to install PHP, and you
