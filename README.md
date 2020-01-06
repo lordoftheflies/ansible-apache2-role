@@ -281,8 +281,96 @@ MIT / BSD
 
 ## Author Information
 
+---php
+$title = "About Front Matter";
+$example = array(
+  'language' => "php",
+);
+---
+
+
+# H1
+## H2
+### H3
+#### H4
+##### H5
+###### H6
+
+Alternatively, for H1 and H2, an underline-ish style:
+
+Alt-H1
+======
+
+Alt-H2
+------
+
+<dl>
+  <dt>Markdown in HTML</dt>
+  <dd>Does *not* work **very** well. HTML tags will always work.</dd>
+
+  <dt>Markdown in HTML</dt>
+  <dd>
+
+  Does *not* work **very** well. HTML tags will always work.
+
+  </dd>
+</dl>
+
+<p>
+<details>
+<summary>Click me to collapse/fold.</summary>
+
+These details <em>will</em> remain <strong>hidden</strong> until expanded.
+
+<pre><code>PASTE LOGS HERE</code></pre>
+
+</details>
+</p>
+
+
+- {+ addition 1 +}
+- [+ addition 2 +]
+- {- deletion 3 -}
+- [- deletion 4 -]
+
+This math is inline $`a^2+b^2=c^2`$.
+
+This is on a separate line
+
+```math
+a^2+b^2=c^2
+```
+
+- [x] Completed task
+- [ ] Incomplete task
+  - [ ] Sub-task 1
+  - [x] Sub-task 2
+  - [ ] Sub-task 3
+
+1. [x] Completed task
+1. [ ] Incomplete task
+   1. [ ] Sub-task 1
+   1. [x] Sub-task 2
+
+
+You can add footnotes to your text as follows.[^1]
+
+[^1]: This is my awesome footnote (later in file).
+
+
+
 This role was created in 2014 by [Jeff Geerling](https://www.jeffgeerling.com/), author of [Ansible for DevOps](https://www.ansiblefordevops.com/).
 Role upgraded in 2019 by [László Hegedűs](mailto:laszlo.hegedus@cherubits.hu), founder of [Cherubits LLC](https://www.cherubits.hu)
+
+`#F00`  
+`#F00A`  
+`#FF0000`  
+`#FF0000AA`  
+`RGB(0,255,0)`  
+`RGB(0%,100%,0%)`  
+`RGBA(0,255,0,0.3)`  
+`HSL(540,70%,50%)`  
+`HSLA(540,70%,50%,0.3)` 
 
 
 <!--Follow the Style Guide when working on this document. https://docs.gitlab.com/ee/development/documentation/styleguide.html
