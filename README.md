@@ -14,6 +14,29 @@ An Ansible Role that installs Apache 2.x on RHEL/CentOS, Debian/Ubuntu, SLES and
 
 ----
 
+- This is an [inline-style link](https://www.google.com)
+- This is a [link to a repository file in the same directory](index.md)
+- This is a [relative link to a readme one directory higher](../README.md)
+- This is a [link that also has title text](https://www.google.com "This link takes you to Google!")
+
+Using header ID anchors:
+
+- This links to [a section on a different Markdown page, using a "#" and the header ID](index.md#overview)
+- This links to [a different section on the same page, using a "#" and the header ID](#header-ids-and-links)
+
+Using references:
+
+- This is a [reference-style link, see below][Arbitrary case-insensitive reference text]
+- You can [use numbers for reference-style link definitions, see below][1]
+- Or leave it empty and use the [link text itself][], see below.
+
+Some text to show that the reference links can follow later.
+
+[arbitrary case-insensitive reference text]: https://www.mozilla.org/en-US/
+[1]: https://slashdot.org
+[link text itself]: https://www.reddit.com
+
+
 ## Requirements
 
 If you are using SSL/TLS, you will need to provide your own certificate and key files. You can generate a self-signed certificate with a command like 
