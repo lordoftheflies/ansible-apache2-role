@@ -1,2 +1,33 @@
 ---
 # tasks file for ansible-apache2-role
+
+
+
+- name: "Create a directory if it does not exist"
+  tags: ["apache2"]
+  file:
+    path: /etc/apache2/sites-available
+    state: directory
+    mode: u=rwx,g=rx,o=rx
+
+- name: "Create a directory if it does not exist"
+  file:
+    path: /etc/apache2/sites-enabled
+    state: directory
+    mode: u=rwx,g=rx,o=rx
+
+- name: "Install dependencies"
+  package:
+    name:
+      - apache2
+    state: present
+  with_items: "{{ packages }}"
+
+- name: "Enable/disable Apache2 module 'wsgi'"
+  tags: [ "apache2", "mod" ]
+  apache2_module:
+    state: present
+    name: wsgi
+
+- name: ""
+  tags: [ "", "", "" ]
