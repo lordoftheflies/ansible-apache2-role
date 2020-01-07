@@ -1,0 +1,34 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+lint:
+  name: yamllint
+platforms:
+  - name: ubuntu
+    image: ubuntu/systemd
+    privileged: true
+    command: /sbin/init
+    security_opts:
+      - seccomp=unconfigured
+    capabilities:
+      - SYS_ADMIN
+    volume_mounts:
+      - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
+  - name: centos7
+      image: centos/systemd
+      privileged: true
+      command: /sbin/init
+      security_opts:
+        - seccomp=unconfigured
+      capabilities:
+        - SYS_ADMIN
+      volume_mounts:
+        - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
+provisioner:
+  name: ansible
+  lint:
+    name: ansible-lint
+scenario:
+  name: default
