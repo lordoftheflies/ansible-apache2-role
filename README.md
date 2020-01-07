@@ -340,35 +340,3 @@ Inside `vars/main.yml`:
 * Support for MacOS
 * Extend to ```httpd``` and finalize RedHat platform.
 * Automatic certificate generation from cacert.
-
-{::options parse_block_html="true" /}
-
-<div class="panel panel-warning">
-**Warning**
-{: .panel-heading}
-<div class="panel-body">
-
-WARNING DESCRIPTION
-
-</div>
-</div>
-
-
-
-<style>
-.alert-danger {
-  color: rgb(169,68,66) !important;
-}
-
-.alert-info {
-    color: rgb(49,112,143) !important;
-}
-.purple {
-    color:inherit;
-}
-.purple:hover {
-    color:rgb(107,79,187);
-}
-</style>
-
-{::options parse_block_html="true" /}
