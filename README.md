@@ -2,7 +2,9 @@
 
 # Ansible Galaxy Role: Apache 2.x
 
-[[_TOC_]]
+<!-- MarkdownTOC autolink="true" -->
+items here
+<!-- /MarkdownTOC -->
 
 An Ansible Role that installs Apache 2.x on RHEL/CentOS, Debian/Ubuntu, SLES and Solaris.
 
