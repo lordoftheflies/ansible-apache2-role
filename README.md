@@ -4,6 +4,12 @@ feedback: true
 description: 'Learn how to use and configure the Apache2 role.'
 ---
 
+[![Build Status](https://travis-ci.org/lordoftheflies/ansible-apache2-role.svg?branch=master)](https://travis-ci.org/lordoftheflies/ansible-apache2-role)
+
+# Ansible Galaxy Role: Apache 2.x
+
+An Ansible Role that installs Apache 2.x on RHEL/CentOS, Debian/Ubuntu, SLES and Solaris.
+
 [[_TOC_]]
 
 ## Requirements
