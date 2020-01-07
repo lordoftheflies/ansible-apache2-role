@@ -1,44 +1,10 @@
-[![Build Status](https://travis-ci.org/lordoftheflies/ansible-apache2-role.svg?branch=master)](https://travis-ci.org/lordoftheflies/ansible-apache2-role)
+---
+comments: true
+feedback: true
+description: 'Learn how to use and configure the Apache2 role.'
+---
 
-# Ansible Galaxy Role: Apache 2.x
-
-<!-- MarkdownTOC autolink="true" -->
-
-
-An Ansible Role that installs Apache 2.x on RHEL/CentOS, Debian/Ubuntu, SLES and Solaris.
-
-----
-
-## On this page
-{:.no_toc}
-
-- TOC
-{:toc}
-
-----
-
-- This is an [inline-style link](https://www.google.com)
-- This is a [link to a repository file in the same directory](index.md)
-- This is a [relative link to a readme one directory higher](../README.md)
-- This is a [link that also has title text](https://www.google.com "This link takes you to Google!")
-
-Using header ID anchors:
-
-- This links to [a section on a different Markdown page, using a "#" and the header ID](index.md#overview)
-- This links to [a different section on the same page, using a "#" and the header ID](#header-ids-and-links)
-
-Using references:
-
-- This is a [reference-style link, see below][Arbitrary case-insensitive reference text]
-- You can [use numbers for reference-style link definitions, see below][1]
-- Or leave it empty and use the [link text itself][], see below.
-
-Some text to show that the reference links can follow later.
-
-[arbitrary case-insensitive reference text]: https://www.mozilla.org/en-US/
-[1]: https://slashdot.org
-[link text itself]: https://www.reddit.com
-
+[[_TOC_]]
 
 ## Requirements
 
@@ -48,93 +14,36 @@ If you are using SSL/TLS, you will need to provide your own certificate and key 
 openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout example.key -out example.crt
 ```
 
-<script src="https://gitlab.com/gitlab-org/gitlab-ce/snippets/1717978.js"></script>
-
-<div class="video-fallback">
-  See the video: <a href="https://www.youtube.com/watch?v=MqL6BMOySIQ">Video title</a>.
-</div>
-<figure class="video-container">
-  <iframe src="https://www.youtube.com/embed/MqL6BMOySIQ" frameborder="0" allowfullscreen="true"> </iframe>
-</figure>
-
-<figure class="video_container">
-<iframe IFRAME CONTENT></iframe>
-</figure>
-
-<figure class="video_container">
-<iframe src="https://docs.google.com/spreadsheets/d/1jAnvYpRmNu8BISIrkYGTLolOTmlCoKLbuHVWzCXJSY4/pubhtml?widget=true&amp;headers=false"></iframe>
-</figure>
-
-<figure class="video_container">
-<iframe src="https://docs.google.com/presentation/d/16FZd01-zCj_1jApDQI7TzQMFnW2EGwtQoRuX82dkOVs/embed?start=false&loop=false&delayms=3000" frameborder="0" width="1280" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-</figure>
-
-<figure class="video_container">
-<iframe src="https://docs.google.com/document/d/1mHhOhvvrz7xgUPyn5VWCNuKgew5MRRGZp761B9prPqs/pub?embedded=true"></iframe>
-</figure>
-
-<figure>
-<iframe src="//www.slideshare.net/slideshow/embed_code/key/EixD8OUMBX65Jy" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
-</figure>
-
-TIP: **Tip:**
-This is a tip.
-
-CAUTION: **Caution:**
-This is something to be cautious about.
-
-DANGER: **Danger:**
-This is a breaking change, a bug, or something very important to note.
-
-> This is a blockquote.
-
-
-> This is the first paragraph.
->
-> This is the second paragraph.
->
-> - This is a list item
-> - Second item in the list
-
-curl --header "PRIVATE-TOKEN: zPL1wTepjFKk_aGxW4jc" https://gitlab.cherubits.hu/api/v4/groups/oss
-
-### <i class="fab fa-gitlab fa-fw" style="color:rgb(107,79,187); font-size:.85em" aria-hidden="true"></i> Purple GitLab Tanuki
-{: #tanuki-purple}
-
-NOTE: **Note:** 
-If you are using Apache with PHP, I recommend using the `geerlingguy.php` role to install PHP, and you
- can either
- use mod_php (by adding the proper package, e.g. `libapache2-mod-php5` for Ubuntu, to `php_packages`), or by also
-  using `geerlingguy.apache-php-fpm` to connect Apache to PHP via FPM. See that role's README for more info. 
-{: .note .alert .alert-info .text-center}
-
-{::options parse_block_html="true" /}
-
-<i class="fab fa-gitlab" style="color:rgb(107,79,187); font-size:.85em" aria-hidden="true"></i>&nbsp;&nbsp;
-The webcast I want to announce - [Register here][webcast-link]!
-&nbsp;&nbsp;<i class="fab fa-gitlab" style="color:rgb(107,79,187); font-size:.85em" aria-hidden="true"></i>
-{: .alert .alert-webcast}
-
-My text in an purple box.
-{: .alert .alert-gitlab-purple}
-
-
-{::options parse_block_html="true" /}
-
-<p>assddsdsfsf</p>
-
-{::options parse_block_html="false" /}
-
-
 ## Role Variables
 
 Available variables are listed below, along with default values (see `defaults/main.yml`):
 
-```yml
-apache_enablerepo: ""
-```
+<p>
 
-The repository to use when installing Apache (only used on RHEL/CentOS systems). If you'd like later versions of Apache than are available in the OS's core repositories, use a repository like EPEL (which can be installed with the `geerlingguy.repo-epel` role).
+<details>
+
+<summary>Enable EPEL packages</summary>
+
+### Enable EPEL packages
+
+The repository to use when installing Apache (only used on RHEL/CentOS systems). If you'd like later versions of Apache than are available in the OS's core repositories, use a repository like EPEL (which can be installed with the `lordoftheflies.repo-epel` role).
+
+<pre>
+    <code>apache_enablerepo: ""</code>
+</pre>
+
+</details>
+</p>
+
+<p>
+
+<details>
+
+<summary>Listening address</summary>
+
+### Listening address
+
+The IP address and ports on which apache should be listening. Useful if you have another service (like a reverse proxy) listening on port 80 or 443 and need to change the defaults.
 
 ```yml
     apache_listen_ip: "*"
@@ -142,7 +51,19 @@ The repository to use when installing Apache (only used on RHEL/CentOS systems).
     apache_listen_port_ssl: 443
 ```
 
-The IP address and ports on which apache should be listening. Useful if you have another service (like a reverse proxy) listening on port 80 or 443 and need to change the defaults.
+</details>
+
+</p>
+
+<p>
+
+<details>
+
+<summary>Virtual host settings</summary>
+
+### Virtual host settings
+
+If set to true, a vhosts file, managed by this role's variables (see below), will be created and placed in the Apache configuration folder. If set to false, you can place your own vhosts file into Apache's configuration folder and skip the convenient (but more basic) one added by this role. You can also override the template used and set a path to your own template, if you need to further customize the layout of your VirtualHosts.
 
 ```yml
     apache_create_vhosts: true
@@ -150,21 +71,56 @@ The IP address and ports on which apache should be listening. Useful if you have
     apache_vhosts_template: "vhosts.conf.j2"
 ```
 
-If set to true, a vhosts file, managed by this role's variables (see below), will be created and placed in the Apache configuration folder. If set to false, you can place your own vhosts file into Apache's configuration folder and skip the convenient (but more basic) one added by this role. You can also override the template used and set a path to your own template, if you need to further customize the layout of your VirtualHosts.
+</details>
+
+</p>
+
+
+<p>
+
+<details>
+
+<summary>Remove virtualhost</summary>
+
+### Remove virtualhost
+
+On Debian/Ubuntu, a default virtualhost is included in Apache's configuration. Set this to `true` to remove that default virtualhost configuration file.
 
 ```yml
     apache_remove_default_vhost: false
 ```
+</details>
 
-On Debian/Ubuntu, a default virtualhost is included in Apache's configuration. Set this to `true` to remove that default virtualhost configuration file.
+</p>
+
+<p>
+
+<details>
+
+<summary>Global virtualhost settings</summary>
+
+### Global virtualhost settings
+
+You can add or override global Apache configuration settings in the role-provided vhosts file (assuming `apache_create_vhosts` is true) using this variable. By default it only sets the DirectoryIndex configuration.
 
 ```yml
     apache_global_vhost_settings: |
       DirectoryIndex index.php index.html
       # Add other global settings on subsequent lines.
 ```
+</details>
 
-You can add or override global Apache configuration settings in the role-provided vhosts file (assuming `apache_create_vhosts` is true) using this variable. By default it only sets the DirectoryIndex configuration.
+</p>
+
+<p>
+
+<details>
+
+<summary>Additional virtualhost settings</summary>
+
+### Additional virtualhost settings
+
+Add a set of properties per virtualhost, including `servername` (required), `documentroot` (required), `allow_override` (optional: defaults to the value of `apache_allow_override`), `options` (optional: defaults to the value of `apache_options`), `serveradmin` (optional), `serveralias` (optional) and `extra_parameters` (optional: you can add whatever additional configuration lines you'd like in here).
 
 ```yml
     apache_vhosts:
@@ -172,8 +128,6 @@ You can add or override global Apache configuration settings in the role-provide
       - servername: "local.dev"
         documentroot: "/var/www/html"
 ```
-
-Add a set of properties per virtualhost, including `servername` (required), `documentroot` (required), `allow_override` (optional: defaults to the value of `apache_allow_override`), `options` (optional: defaults to the value of `apache_options`), `serveradmin` (optional), `serveralias` (optional) and `extra_parameters` (optional: you can add whatever additional configuration lines you'd like in here).
 
 Here's an example using `extra_parameters` to add a RewriteRule to redirect all requests to the `www.` site:
 
@@ -185,6 +139,18 @@ Here's an example using `extra_parameters` to add a RewriteRule to redirect all 
           RewriteCond %{HTTP_HOST} !^www\. [NC]
           RewriteRule ^(.*)$ http://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 ```
+
+</details>
+
+</p>
+
+<p>
+
+<details>
+
+<summary>SSL settings</summary>
+
+### SSL settings
 
 The `|` denotes a multiline scalar block in YAML, so newlines are preserved in the resulting configuration file output.
 
@@ -231,30 +197,82 @@ The default values for the `AllowOverride` and `Options` directives for the `doc
 
 (Debian/Ubuntu ONLY) Which Apache mods to enable or disable (these will be symlinked into the appropriate location). See the `mods-available` directory inside the apache configuration directory (`/etc/apache2/mods-available` by default) for all the available mods.
 
+</details>
+
+</p>
+
+<p>
+
+<details>
+
+<summary>Platform specific variables</summary>
+
+### Platform specific variables
+
+The list of packages to be installed. This defaults to a set of platform-specific packages for RedHat or Debian-based systems (see `vars/RedHat.yml` and `vars/Debian.yml` for the default values).
+
 ```yml
     apache_packages:
       - [platform-specific]
 ```
 
-The list of packages to be installed. This defaults to a set of platform-specific packages for RedHat or Debian-based systems (see `vars/RedHat.yml` and `vars/Debian.yml` for the default values).
+</details>
+
+</p>
+
+<p>
+
+<details>
+
+<summary>Platform specific variables</summary>
+
+### Platform specific variables
+
+Set initial Apache daemon state to be enforced when this role is run. This should generally remain `started`, but you can set it to `stopped` if you need to fix the Apache config during a playbook run or otherwise would not like Apache started at the time this role is run.
 
 ```yml
     apache_state: started
 ```
 
-Set initial Apache daemon state to be enforced when this role is run. This should generally remain `started`, but you can set it to `stopped` if you need to fix the Apache config during a playbook run or otherwise would not like Apache started at the time this role is run.
+</details>
+
+</p>
+
+<p>
+
+<details>
+
+<summary>Apache packages</summary>
+
+### Apache packages
+
+If you have enabled any additional repositories such as _ondrej/apache2_, [geerlingguy.repo-epel](https://github.com/geerlingguy/ansible-role-repo-epel), or [geerlingguy.repo-remi](https://github.com/geerlingguy/ansible-role-repo-remi), you may want an easy way to upgrade versions. You can set this to `latest` (combined with `apache_enablerepo` on RHEL) and can directly upgrade to a different Apache version from a different repo (instead of uninstalling and reinstalling Apache).
 
 ```yml
     apache_packages_state: present
 ```
 
-If you have enabled any additional repositories such as _ondrej/apache2_, [geerlingguy.repo-epel](https://github.com/geerlingguy/ansible-role-repo-epel), or [geerlingguy.repo-remi](https://github.com/geerlingguy/ansible-role-repo-remi), you may want an easy way to upgrade versions. You can set this to `latest` (combined with `apache_enablerepo` on RHEL) and can directly upgrade to a different Apache version from a different repo (instead of uninstalling and reinstalling Apache).
+</details>
+
+</p>
+
+<p>
+
+<details>
+
+<summary>Ignore missing SSL</summary>
+
+### Ignore missing SSL
+
+If you would like to only create SSL vhosts when the vhost certificate is present (e.g. when using Let’s Encrypt), set `apache_ignore_missing_ssl_certificate` to `false`. When doing this, you might need to run your playbook more than once so all the vhosts are configured (if another part of the playbook generates the SSL certificates).
 
 ```yml
     apache_ignore_missing_ssl_certificate: true
 ```
 
-If you would like to only create SSL vhosts when the vhost certificate is present (e.g. when using Let’s Encrypt), set `apache_ignore_missing_ssl_certificate` to `false`. When doing this, you might need to run your playbook more than once so all the vhosts are configured (if another part of the playbook generates the SSL certificates).
+</details>
+
+</p>
 
 ## .htaccess-based Basic Authorization
 
@@ -285,7 +303,9 @@ You would need to generate/upload your own `.htpasswd` file in your own playbook
 
 None.
 
-## Example Playbook
+## Usage
+
+As a spearate role:
 
 ```yml
     - hosts: webservers
@@ -297,202 +317,43 @@ None.
 
 Inside `vars/main.yml`:
 
+```yml
     apache_listen_port: 8080
     apache_vhosts:
       - {servername: "example.com", documentroot: "/var/www/vhosts/example_com"}
-
-## License
-
-MIT / BSD
+```
 
 ## Author Information
 
----php
-$title = "About Front Matter";
-$example = array(
-  'language' => "php",
-);
----
+* This role was created in 2014 by [Jeff Geerling](https://www.jeffgeerling.com/), author of [Ansible for DevOps](https://www.ansiblefordevops.com/).
+* Role upgraded in 2019 by [László Hegedűs](mailto:laszlo.hegedus@cherubits.hu), founder of [Cherubits LLC](https://portal.cherubits.hu)
+
+## Roadmap
+
+* Support for Windows
+* Support for MacOS
+* Extend to ```httpd``` and finalize RedHat platform.
+* Automatic certificate generation from cacert.
+
+{::options parse_block_html="true" /}
+
+<div class="panel panel-warning">
+**Warning**
+{: .panel-heading}
+<div class="panel-body">
+
+WARNING DESCRIPTION
+
+</div>
+</div>
 
 
-# H1
-## H2
-### H3
-#### H4
-##### H5
-###### H6
-
-Alternatively, for H1 and H2, an underline-ish style:
-
-Alt-H1
-======
-
-Alt-H2
-------
-
-<dl>
-  <dt>Markdown in HTML</dt>
-  <dd>Does *not* work **very** well. HTML tags will always work.</dd>
-
-  <dt>Markdown in HTML</dt>
-  <dd>
-
-  Does *not* work **very** well. HTML tags will always work.
-
-  </dd>
-</dl>
-
-<p>
-<details>
-<summary>Click me to collapse/fold.</summary>
-
-These details <em>will</em> remain <strong>hidden</strong> until expanded.
-
-<pre><code>PASTE LOGS HERE</code></pre>
-
-</details>
-</p>
-
-
-- {+ addition 1 +}
-- [+ addition 2 +]
-- {- deletion 3 -}
-- [- deletion 4 -]
-
-This math is inline $`a^2+b^2=c^2`$.
-
-This is on a separate line
-
-```math
-a^2+b^2=c^2
-```
-
-- [x] Completed task
-- [ ] Incomplete task
-  - [ ] Sub-task 1
-  - [x] Sub-task 2
-  - [ ] Sub-task 3
-
-1. [x] Completed task
-1. [ ] Incomplete task
-   1. [ ] Sub-task 1
-   1. [x] Sub-task 2
-
-
-You can add footnotes to your text as follows.[^1]
-
-[^1]: This is my awesome footnote (later in file).
-
-
-
-This role was created in 2014 by [Jeff Geerling](https://www.jeffgeerling.com/), author of [Ansible for DevOps](https://www.ansiblefordevops.com/).
-Role upgraded in 2019 by [László Hegedűs](mailto:laszlo.hegedus@cherubits.hu), founder of [Cherubits LLC](https://www.cherubits.hu)
-
-`#F00`  
-`#F00A`  
-`#FF0000`  
-`#FF0000AA`  
-`RGB(0,255,0)`  
-`RGB(0%,100%,0%)`  
-`RGBA(0,255,0,0.3)`  
-`HSL(540,70%,50%)`  
-`HSLA(540,70%,50%,0.3)` 
-
-
-<!--Follow the Style Guide when working on this document. https://docs.gitlab.com/ee/development/documentation/styleguide.html
-When done, remove all of this commented-out text, except a commented-out Troubleshooting section,
-which, if empty, can be left in place to encourage future use.-->
----
-description: "Short document description." # Up to ~200 chars long. They will be displayed in Google Search snippets. It may help to write the page intro first, and then reuse it here.
----
-
-# Feature Name or Use Case Name **[TIER]** (1)
-<!--If writing about a use case, drop the tier, and start with a verb, e.g. 'Configuring', 'Implementing', + the goal/scenario-->
-
-<!--For pages on newly introduced features, add the following line. If only some aspects of the feature have been introduced, specify what parts of the feature.-->
-> [Introduced](link_to_issue_or_mr) in GitLab (Tier) X.Y (2).
-
-An introduction -- without its own additional header -- goes here.
-Offer a very short description of the feature or use case, and what to expect on this page.
-(You can reuse this content, or part of it, for the front matter's `description` at the top of this file).
-
-## Overview
-
-The feature overview should answer the following questions:
-
-- What is this feature or use case?
-- Who is it for?
-- What is the context in which it is used and are there any prerequisites/requirements?
-- What can the audience do with this? (Be sure to consider all applicable audiences, like GitLab admin and developer-user.)
-- What are the benefits to using this over any alternatives?
-
-## Use cases
-
-Describe some use cases, typically in bulleted form. Include real-life examples for each.
-
-If the page itself is dedicated to a use case, this section can usually include more specific scenarios
-for use (e.g. variations on the main use case), but if that's not applicable, the section can be omitted.
-
-Examples of use cases on feature pages:
-- CE and EE: [Issues](../../user/project/issues/index.md#use-cases)
-- CE and EE: [Merge Requests](../../user/project/merge_requests/index.md)
-- EE-only: [Geo](../../administration/geo/replication/index.md)
-- EE-only: [Jenkins integration](../../integration/jenkins.md)
-
-## Requirements
-
-State any requirements for using the feature and/or following along with the instructions.
-
-These can include both:
-- technical requirements (e.g. an account on a third party service, an amount of storage space, prior configuration of another feature)
-- prerequisite knowledge (e.g. familiarity with certain GitLab features, cloud technologies)
-
-Link each one to an appropriate place for more information.
-
-## Instructions
-
-"Instructions" is usually not the name of the heading.
-This is the part of the document where you can include one or more sets of instructions, each to accomplish a specific task.
-Headers should describe the task the reader will achieve by following the instructions within, typically starting with a verb.
-Larger instruction sets may have subsections covering specific phases of the process.
-
-- Write a step-by-step guide, with no gaps between the steps.
-- Start with an h2 (`##`), break complex steps into small steps using
-subheadings h3 > h4 > h5 > h6. _Never skip a hierarchy level, such
-as h2 > h4_, as it will break the TOC and may affect the breadcrumbs.
-- Use short and descriptive headings (up to ~50 chars). You can use one
-single heading like `## Configuring X` for instructions when the feature
-is simple and the document is short.
-
-<!-- ## Troubleshooting
-
-Include any troubleshooting steps that you can foresee. If you know beforehand what issues
-one might have when setting this up, or when something is changed, or on upgrading, it's
-important to describe those, too. Think of things that may go wrong and include them here.
-This is important to minimize requests for support, and to avoid doc comments with
-questions that you know someone might ask.
-
-Each scenario can be a third-level heading, e.g. `### Getting error message X`.
-If you have none to add when creating a doc, leave this section in place
-but commented out to help encourage others to add to it in the future. -->
-
----
-
-Notes:
-
-- (1): Apply the [tier badges](styleguide.md#product-badges) accordingly
-- (2): Apply the correct format for the [GitLab version introducing the feature](styleguide.md#gitlab-versions-and-tiers)
-
-
----
-feedback: true
----
-
----
-comments: true
----
 
 <style>
+.alert-danger {
+  color: rgb(169,68,66) !important;
+}
+
 .alert-info {
     color: rgb(49,112,143) !important;
 }
@@ -504,5 +365,4 @@ comments: true
 }
 </style>
 
-
-<!-- /MarkdownTOC -->
+{::options parse_block_html="true" /}
