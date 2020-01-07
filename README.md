@@ -3,8 +3,7 @@
 # Ansible Galaxy Role: Apache 2.x
 
 <!-- MarkdownTOC autolink="true" -->
-items here
-<!-- /MarkdownTOC -->
+
 
 An Ansible Role that installs Apache 2.x on RHEL/CentOS, Debian/Ubuntu, SLES and Solaris.
 
@@ -504,3 +503,6 @@ comments: true
     color:rgb(107,79,187);
 }
 </style>
+
+
+<!-- /MarkdownTOC -->
