@@ -2,6 +2,10 @@
 comments: true
 feedback: true
 description: 'Learn how to use and configure the Apache2 role.'
+repositories:
+  - domain=Ansible Role uWSGi, repository=https://github.com/lordoftheflies/apache2
+  - domain=Ansible Role uWSGi, repository=https://gitlab.cherubits.hu/oss/ansible-galaxy-roles/ansible-role-apache2
+  - domain=Ansible Role uWSGi, repository=https://gitlab.com/lordoftheflies/ansible-role-apache2
 ---
 
 [![Build Status](https://travis-ci.org/lordoftheflies/ansible-apache2-role.svg?branch=master)](https://travis-ci.org/lordoftheflies/ansible-apache2-role)
