@@ -29,5 +29,4 @@
     state: present
     name: wsgi
 
-- name: ""
-  tags: [ "", "", "" ]
+
